@@ -39,7 +39,7 @@ extension = ''
 
 executable = ['.apk', '.bat', '.bin', '.exe', '.jar', '.py']
 images = ['.ico', '.png', '.jpeg', '.gif', '.tiff', '.psd', '.raw', '.jpg']
-videos = ['.avi', '.flv', '.wmv', '.mov', '.mp4', '.webm', '.mpeg', '.mpg', '.3gp']
+Entertainment = ['.mp3','.avi', '.flv', '.wmv', '.mov', '.mp4', '.webm', '.mpeg', '.mpg', '.3gp']
 document = ['.doc', '.pdf', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.txt']
 compressed = ['.7z', '.zip', '.rar', '.z', '.zip', '.iso']
 database = ['.csv', '.dat', '.db', '.dbf', '.sql', 'xml']
@@ -53,7 +53,7 @@ def staticOne():
     if not reader:
         track.write("Sorted files are placed under the following folder:\n\n")
         track.write("\tImage Files:\n\n")
-        track.write("\tVideo Files:\n\n")
+        track.write("\tEntertainment Files:\n\n")
         track.write("\tDocument Files:\n\n")
         track.write("\tCompressed Files:\n\n")
         track.write("\tDatabase Files:\n\n")
@@ -81,12 +81,12 @@ def staticOne():
                     contents.insert(i,'\t\t'+f+'\t\t'+"Sorted on - "+str(currentDT.strftime("%Y-%m-%d %H:%M:%S"))+'\n')
                 extension = '/Image Files'
 
-        elif ext in videos:
+        elif ext in Entertainment:
             for x in contents:
                 i+=1
-                if x=='\tVideo Files:\n':
+                if x=='\tEntertainment Files:\n':
                     contents.insert(i,'\t\t'+f+'\t\t'+"Sorted on - "+str(currentDT.strftime("%Y-%m-%d %H:%M:%S"))+'\n')
-                extension = '/Video Files'
+                extension = '/Entertainment Files'
 
         elif ext in document:
             if name=='listFiles':
